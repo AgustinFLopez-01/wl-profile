@@ -1,3 +1,4 @@
 profile default{
 	output eDP-1 enable position 0,0 mode 1600x900@60		
+	output DP-4 enable position 1600,0 mode 1024x768@60
 }
