@@ -3,7 +3,21 @@ contador=0
 arr=()
 identificador=""
 swaymsg -t get_outputs -p| grep Output | awk '{print$2}' > salidas.conf #obtiene las salidas actualmente conectadas y las guarda en salidas.conf
+obtener_modos_monitor() {
 
+    local mon=$1
+
+    swaymsg -t get_outputs -p | \
+
+    sed -n "/^Output $mon/,/^$/p" | \
+
+    sed -n '/Available modes:/,/^$/p' | \
+
+    grep "[0-9]" | \
+
+    sed 's/^[[:space:]]*//' # Esto elimina los espacios iniciales para que quede más limpio
+
+}
 
 while IFS= read -r linea; do #ciclo que lee las salidas
     ((contador++))
