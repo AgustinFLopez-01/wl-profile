@@ -18,7 +18,8 @@ obtener_modos_monitor() {
     sed -n "/^Output $mon/,/^$/p" | \
     sed -n '/Available modes:/,/^$/p' | \
     grep "[0-9]" | \
-    sed 's/^[[:space:]]*//'
+    sed 's/^[[:space:]]*//'|\
+    sed -E 's/[[:space:]]+\([0-9]+:[0-9]+\)[[:space:]]*$//'
 }
 
 # Leer salidas
@@ -142,5 +143,4 @@ printf "profile actual {\n$identificador}\n" > nuevaConfig.json
 mv nuevaConfig.json ~/.config/kanshi/config.tmp
 mv ~/.config/kanshi/config nuevaConfig.json
 mv ~/.config/kanshi/config.tmp ~/.config/kanshi/config 		
-pkill kanshi
-kanshi &
+swaymsg reload
