@@ -1,2 +1,1 @@
-El texro es solo para poder subirlo a git, luego lo arreglamos
-
+#Generador de configuraciones para kanshi

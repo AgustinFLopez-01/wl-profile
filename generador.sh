@@ -7,7 +7,14 @@ principal=""
 salidas_sel=()
 modos_sel=()
 posiciones_rel=()
+edid=()
 opciones=("derecha" "izquierda" "arriba" "abajo")
+obtener_EDID(){
+    mapfile -t edid < <(
+        swaymsg -t get_outputs -r | jq -r '.[]|"\(.make) \(.model) \(.serial)"'
+    )
+    echo "${edid[0]}"
+}
 
 swaymsg -t get_outputs -p | grep Output | awk '{print $2}' > salidas.conf
 
@@ -23,6 +30,7 @@ obtener_modos_monitor() {
 }
 
 # Leer salidas
+obtener_EDID
 while IFS= read -r linea; do
     ((contador++))
     arr+=("$linea")
