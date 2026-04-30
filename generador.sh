@@ -13,9 +13,11 @@ obtener_EDID(){
     mapfile -t edid < <(
         swaymsg -t get_outputs -r | jq -r '.[]|"\(.make) \(.model) \(.serial)"'
     )
+    mapfile -t arr < <(
+        swaymsg -t get_outputs -r | jq -r '.[]|"\(.name)"'
+    )
     echo "${edid[0]}"
 }
-
 swaymsg -t get_outputs -p | grep Output | awk '{print $2}' > salidas.conf
 
 obtener_modos_monitor() {
@@ -31,17 +33,11 @@ obtener_modos_monitor() {
 
 # Leer salidas
 obtener_EDID
-while IFS= read -r linea; do
-    ((contador++))
-    arr+=("$linea")
-done < salidas.conf
-
-echo "${#arr[@]}"
 
 # Selección de pantallas
-for salida in "${arr[@]}"; do
+for salida in "${!edid[@]}"; do
     while true; do
-        read -r -p "¿Agregar '$salida' al perfil? (Y/N): " resp
+        read -r -p "¿Agregar '${edid[salida]}' al perfil? (Y/N): " resp
 
         if [[ "$resp" == "Y" || "$resp" == "N" ]]; then
             break
@@ -53,9 +49,9 @@ for salida in "${arr[@]}"; do
     if [[ "$resp" == "Y" ]]; then
 
         # Obtener modos
-        mapfile -t modos < <(obtener_modos_monitor "$salida")
+        mapfile -t modos < <(obtener_modos_monitor "${arr[$salida]}")
 
-        echo "Modos disponibles para $salida:"
+        echo "Modos disponibles para ${edid[salida]}:"
         for i in "${!modos[@]}"; do
             echo "$i) ${modos[$i]}"
         done
