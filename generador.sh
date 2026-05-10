@@ -100,7 +100,7 @@ for salida in "${!edid[@]}"; do
         modos_sel+=("$modo_limpio")
 
     else
-        identificador+="\toutput \"${arr[$salida]}\" disable\n"
+        identificador+="\toutput \"${edid[$salida]}\" disable\n"
     fi
 done
 
@@ -140,7 +140,7 @@ for i in "${!salidas_sel[@]}"; do
             x=0; y=$alto;;
     esac
 
-    identificador+="\toutput \"${arr[$salida]}\" mode $modo position ${x},${y}\n"
+    identificador+="\toutput \"${edid[$salida]}\" mode $modo position ${x},${y}\n"
 done
 
 printf "profile actual {\n$identificador}\n" > nuevaConfig.json
