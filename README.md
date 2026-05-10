@@ -18,3 +18,4 @@ Permite seleccionar monitores, resoluciones, modos y posiciones automaticamente 
 - **Sway**
 - **Kanshi**
 - **jq**
+

@@ -1,0 +1,4 @@
+profile actual {
+	output "Samsung Display Corp. 0x544B Unknown" mode 1600x900@60.000 position 0,0
+	output "Sony PCVD-15XA1 0x01010101" mode 720x400@70.082 position 1600,0
+}
