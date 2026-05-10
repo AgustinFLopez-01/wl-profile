@@ -25,3 +25,6 @@ Permite seleccionar monitores, resoluciones, modos y posiciones automaticamente 
 - **Kanshi**
 - **jq**
 
+## Modo de uso
+[![asciicast](https://asciinema.org/a/Ck6nMnCxCCZrOcDk.svg)](https://asciinema.org/a/Ck6nMnCxCCZrOcDk)
+
