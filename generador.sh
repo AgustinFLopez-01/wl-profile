@@ -1,6 +1,5 @@
 #!/bin/bash
 
-contador=0
 arr=()
 identificador=""
 principal=""
