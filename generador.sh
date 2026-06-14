@@ -8,6 +8,8 @@ modos_sel=()
 posiciones_rel=()
 edid=()
 opciones=("derecha" "izquierda" "arriba" "abajo")
+nombrePerfil=""
+#función para obtener el edid de los monitores conectados actualmente
 obtener_EDID(){
     mapfile -t edid < <(
         swaymsg -t get_outputs -r | jq -r '.[]|"\(.make) \(.model) \(.serial)"'
@@ -99,7 +101,7 @@ for salida in "${!edid[@]}"; do
         modos_sel+=("$modo_limpio")
 
     else
-        identificador+="\toutput \"${edid[$salida]}\" disable\n"
+        identificador+=$'\t'"output \"${edid[$salida]}\" disable"$'\n'
     fi
 done
 
@@ -139,11 +141,15 @@ for i in "${!salidas_sel[@]}"; do
             x=0; y=$alto;;
     esac
 
-    identificador+="\toutput \"${edid[$salida]}\" mode $modo position ${x},${y}\n"
+    identificador+=$'\t'"output \"${edid[$salida]}\" mode $modo position ${x},${y}"$'\n'
 done
-
-printf "profile actual {\n$identificador}\n" > nuevaConfig.json
-mv nuevaConfig.json ~/.config/kanshi/config.tmp
-mv ~/.config/kanshi/config nuevaConfig.json
-mv ~/.config/kanshi/config.tmp ~/.config/kanshi/config 		
+read -r -p $'Nombre del nuevo perfil:\n' nombrePerfil
+identificador=$'profile '"$nombrePerfil"$' {\n'"$identificador"$'\n}\n'
+{
+    printf '%s\n' "$identificador"
+    cat ~/.config/kanshi/config
+} > ~/.config/kanshi/config.tmp
+mv ~/.config/kanshi/config.tmp  ~/.config/kanshi/config
+rm ~/.config/kanshi/config.tmp
+rm salidas.conf
 swaymsg reload
