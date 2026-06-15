@@ -19,7 +19,6 @@ obtener_EDID(){
     )
     echo "${edid[0]}"
 }
-swaymsg -t get_outputs -p | grep Output | awk '{print $2}' > salidas.conf
 
 obtener_modos_monitor() {
     local mon=$1
@@ -151,5 +150,5 @@ identificador=$'profile '"$nombrePerfil"$' {\n'"$identificador"$'\n}\n'
 } > ~/.config/kanshi/config.tmp
 mv ~/.config/kanshi/config.tmp  ~/.config/kanshi/config
 rm ~/.config/kanshi/config.tmp
-rm salidas.conf
+
 swaymsg reload
