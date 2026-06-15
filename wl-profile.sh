@@ -135,9 +135,9 @@ for i in "${!salidas_sel[@]}"; do
         izquierda)
             x=-$ancho; y=0;;
         arriba)
-            x=0; y=-$alto;;
-        abajo)
             x=0; y=$alto;;
+        abajo)
+            x=0; y=-$alto;;
     esac
 
     identificador+=$'\t'"output \"${edid[$salida]}\" mode $modo position ${x},${y}"$'\n'
