@@ -133,7 +133,7 @@ for i in "${!salidas_sel[@]}"; do
         derecha)
             x=$ancho; y=0;;
         izquierda)
-            x=-$ancho; y=0;;
+            x=-$(cut -d "x" -f 1 <<< "$modo"); y=0;;
         arriba)
             x=0; y=$alto;;
         abajo)
