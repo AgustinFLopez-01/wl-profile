@@ -149,6 +149,4 @@ identificador=$'profile '"$nombrePerfil"$' {\n'"$identificador"$'\n}\n'
     cat ~/.config/kanshi/config
 } > ~/.config/kanshi/config.tmp
 mv ~/.config/kanshi/config.tmp  ~/.config/kanshi/config
-rm ~/.config/kanshi/config.tmp
-
 swaymsg reload
