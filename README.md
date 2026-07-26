@@ -36,4 +36,4 @@ Permite seleccionar monitores, resoluciones, modos y posiciones automaticamente 
 
 ## Licencia
 
-Este proyecto se distribuye bajo la licencia **GNU General Public License v3.0**. Consulta el archivo [LICENSE](LICENSES/GPL-3.0-or-later.txt) para más detalles.
+Este proyecto se distribuye bajo la licencia **GNU General Public License v3.0**. Consulta el archivo [LICENSE](LICENSES/GPL-3.0-or-later.txt) para más detalles. Los comentarios acerca de la licencia usan el estandar SPX.
