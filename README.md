@@ -28,3 +28,6 @@ Permite seleccionar monitores, resoluciones, modos y posiciones automaticamente 
 ## Modo de uso
 [![asciicast](https://asciinema.org/a/Ck6nMnCxCCZrOcDk.svg)](https://asciinema.org/a/Ck6nMnCxCCZrOcDk)
 
+## Licencia
+
+Este proyecto se distribuye bajo la licencia **GNU General Public License v3.0**. Consulta el archivo [LICENSE.txt](LICENSE) para más detalles.
