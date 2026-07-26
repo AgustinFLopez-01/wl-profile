@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: 2026 Gus F. López
+
+SPDX-License-Identifier: GPL-3.0-or-later
+-->
+
 # WL-PROFILE
 
 ![Wayland](https://img.shields.io/badge/Wayland-000000?style=for-the-badge&logo=wayland&logoColor=white)
