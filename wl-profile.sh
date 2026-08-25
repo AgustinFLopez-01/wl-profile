@@ -1,4 +1,6 @@
 #!/bin/bash
+# SPDX-FileCopyrightText: 2026 Gus F. López
+# SPDX-License-Identifier: GPL-3.0-or-later
 
 arr=()
 identificador=""
