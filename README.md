@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: 2026 Gus F. López
+
+SPDX-License-Identifier: GPL-3.0-or-later
+-->
+
 # WL-PROFILE
 
 ![Wayland](https://img.shields.io/badge/Wayland-000000?style=for-the-badge&logo=wayland&logoColor=white)
@@ -28,3 +34,6 @@ Permite seleccionar monitores, resoluciones, modos y posiciones automaticamente 
 ## Modo de uso
 [![asciicast](https://asciinema.org/a/Ck6nMnCxCCZrOcDk.svg)](https://asciinema.org/a/Ck6nMnCxCCZrOcDk)
 
+## Licencia
+
+Este proyecto se distribuye bajo la licencia **GNU General Public License v3.0**. Consulta el archivo [LICENSE](LICENSES/GPL-3.0-or-later.txt) para más detalles. Los comentarios acerca de la licencia usan el estandar SPDX.
