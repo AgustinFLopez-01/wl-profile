@@ -32,7 +32,23 @@ Permite seleccionar monitores, resoluciones, modos y posiciones automaticamente 
 - **jq**
 
 ## Modo de uso
+
+1. Clonar el repositorio y dar permisos de ejecución:
+   ```bash
+   git clone https://github.com/AgustinFLopez-01/wl-profile.git
+   cd wl-profile
+   chmod +x wl-profile.sh
+   ```
+2. Ejecutar el script interactivo:
+   ```bash
+   ./wl-profile.sh
+   ```
+
 [![asciicast](https://asciinema.org/a/Ck6nMnCxCCZrOcDk.svg)](https://asciinema.org/a/Ck6nMnCxCCZrOcDk)
+
+## Contribución
+
+¡Las contribuciones son bienvenidas! Consulta nuestra [Guía de Contribución](.github/CONTRIBUTING.md) para conocer la convención de commits, ramas y el flujo de trabajo con la rama `develop`.
 
 ## Licencia
 
